@@ -1,0 +1,2 @@
+check-requirements-txt==1.0.2
+stdlib-list==0.8.0

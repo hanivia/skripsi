@@ -1,0 +1,120 @@
+{% extends 'base_userwilayah.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+
+{% block content %}
+<!-- Isi Content -->
+<div class="content-wrapper">
+    <br>
+    <!-- Main content -->
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-11">
+                <div class="card card-body">
+                    {% load appsantri_extras %}
+                    <form method="get">
+                        <div class="row">
+                            <div class="col">
+                                Nama:
+                                {{ filter_data_santri.form.nama | add_class:"form-control"}}
+                            </div>
+                            <div class="col">
+                                Tahun Pelajaran:
+                                {{ filter_data_santri.form.tahun_pelajaran | add_class:"form-control"}}
+                            </div>
+                            <div class="col mt-4 justify-content-md-center">
+                                <button class="btn btn-info" type="submit">Cari Data</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <br />
+                <h5>Data Santri</h5>
+                <hr>
+                <div class="card card-body">
+                    <a class="btn btn-info btn-block" href="#">Data Santri</a>
+                    <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Tahun Pelajaran</th>
+                            <th>Wilayah</th>
+                            <th>Foto</th>
+                            <th>Aksi</th>
+                        </tr>
+                        {% for santri in santri_page_obj %}
+
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+
+                            {% if santri.nama %}
+                                <td>{{ santri.nama }}</td>
+                            {% else %}
+                                <td>-</td>
+                            {% endif %}
+
+                            {% if santri.jenis_kelamin.jenis %}
+                                <td>{{ santri.jenis_kelamin.jenis }}</td>
+                            {% else %}
+                                <td>-</td>
+                            {% endif %}
+                            
+                            {% if santri.tahun_pelajaran.tahun_pelajaran %}
+                                <td>{{ santri.tahun_pelajaran.tahun_pelajaran }}</td>
+                            {% else %}
+                                <td>-</td>
+                            {% endif %}
+
+                            {% if santri.wilayah.nama %}
+                                <td>{{ santri.wilayah.nama }}</td>
+                            {% else %}
+                                <td>-</td>
+                            {% endif %}
+                            
+                            <td> {% if santri.foto %}
+                                <img src="{{ santri.foto.url }}" alt="{{ santri.nama }}" style="width:90px;">
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{% url 'pdf_wilayah' santri.id %}" target="_blank" class="btn btn-info"><span class="fas fa-print"></span>Cetak </a>
+                            </td>
+                        </tr>
+
+                        {% empty %}
+                        <tr>
+                            <td colspan="7" class="text-center">Data Kosong</td>
+                        </tr>
+                        
+                        {% endfor %} 
+                    </table>
+
+
+                    <!-- pagination -->
+                    <div class="pagination">
+                        <span class="step-links">
+                            {% if santri_page_obj.has_previous %}
+                                <a href="{% my_url 1 'page' request.GET.urlencode %}">First</a>
+                                <a href="{% my_url santri_page_obj.previous_page_number 'page' request.GET.urlencode %}">&laquo; Previous</a>
+                            {% endif %}
+    
+                            <span class="current">
+                                Halaman {{ santri_page_obj.number }} of {{ santri_page_obj.paginator.num_pages }}.
+                            </span>
+    
+                            {% if santri_page_obj.has_next %}
+                                <a href="{% my_url santri_page_obj.next_page_number 'page' request.GET.urlencode %}">Next &raquo;</a>
+                                <a href="{% my_url santri_page_obj.paginator.num_pages 'page' request.GET.urlencode %}">last</a>
+                            {% endif %}
+                        </span>
+                    </div>
+                    <!-- /. pagination -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.content -->
+</div>
+<!-- /.Isi Content -->
+{% endblock content %}

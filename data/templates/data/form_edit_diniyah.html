@@ -1,0 +1,45 @@
+{% extends 'base_santri.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<!-- Isi Content -->
+<div class="content-wrapper">
+    <br>
+    <!-- Main content -->
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <div class="card card-body">
+                    {% if messages%}
+                    {% for message in messages%}
+
+                    <div class="alert alert-{{message.tags}}">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+                    <form action="{% url 'edit_diniyah' r.id  %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="nama">Nama Diniyah</label>
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{r.nama}}"
+                                placeholder="Masukan Nama Diniyah">
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Keterangan: Edit Email, Username dan Password di SuperAdmin </label>
+
+                        </div>
+
+                        <input type="submit" class="btn btn-info" value="Simpan" />
+                        <a class="btn btn-secondary" href="{% url 'diniyah' %}" role="button">Kembali</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.content -->
+</div>
+<!-- /.Isi Content -->
+{% endblock content %}

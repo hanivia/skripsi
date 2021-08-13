@@ -1,0 +1,39 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<img src="{% static '/images/logo.png' %}" id="logo">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+    
+      <a class="nav-link {% if menu == 'beranda' %} active {% endif %}" href="{% url 'beranda' %}">BERANDA</a>
+      <a class="nav-link {% if menu == 'santri' %} active {% endif %}" href="{% url 'santri' %}">SANTRI</a>
+      <a class="nav-link {% if menu == 'grafik' %} active {% endif %}" href="{% url 'grafik_santri' %}">GRAFIK</a>
+      <a class="nav-link {% if menu == 'wilayah' %} active {% endif %}" href="{% url 'wilayah' %}">WILAYAH</a>
+      <a class="nav-link {% if menu == 'tahunpelajaran' %} active {% endif %}" href="{% url 'tahunpelajaran' %}">TAHUN PELAJARAN</a>
+      <a class="nav-link {% if menu == 'lembaga' %} active {% endif %}" href="{% url 'lembaga' %}">LEMBAGA</a>
+      <a class="nav-link {% if menu == 'diniyah' %} active {% endif %}" href="{% url 'diniyah' %}">DINIYAH</a>
+     
+    </div>
+    
+  </div>
+   <ul class="navbar-nav">
+      {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Helo,  {{ request.user }} </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">LogOut</a>
+        </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="">Login</a>
+      </li>
+      {% endif %}
+  </ul>
+</nav>
+
+
+</nav>

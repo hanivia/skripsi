@@ -1,0 +1,100 @@
+{% extends 'base_santri.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Isi Content -->
+<div class="content-wrapper">
+    <br>
+    <!-- Main content -->
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-11">
+                <h5>Halaman Pesan</h5>
+                <hr>
+                <div class="card card-body">
+                    {% load appsantri_extras %}
+                    <a class="btn btn-info btn-block" href="#">Tabel Pesan</a>
+                        <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+                        <tr>
+                            <th align="center"  width="20px">No</th>
+                            <th align="center"  width="70px">Dari</th>
+                            <th align="center"  width="200px">Keterangan</th>
+                            <th align="center"  width="80px">Status</th>
+                            <th align="center"  width="200px">Balasan</th>
+                            <th align="center"  width="40px">Balas</th> 
+                            <th align="center"  width="20px">Hapus</th>     
+                        </tr>
+                       
+                        {% for list in pesan_page_obj %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+
+                            {% if list.diniyah %}
+                                <td>{{ list.diniyah }}</td>
+                            {% elif list.lembaga %}
+                                <td>{{ list.lembaga }}</td>
+                            {% elif list.wilayah %}
+                                <td>{{ list.wilayah }}</td>
+                            {% else %}
+                                <td></td>
+                            {% endif %}
+
+                            {% if list.keterangan %}
+                                <td>{{ list.keterangan}}<br>Dikirim pada: {{ list.created_at|date:"d-m-Y" }}</td>
+                            {% else %}
+                                <td>-</td>
+                            {% endif %}
+
+                            {% if list.status == 0 %}
+                                <td>Belum Dibalas</td>
+                            {% else %}
+                                <td>{{ list.status }}</td>
+                            {% endif %}
+
+                            {% if list.pesan_balasan %}
+                                <td>{{ list.pesan_balasan}} <br> <font color="#FF8C00" size="2px"> (Hapus pesan setelah 1 hari)</font></td>
+                            {% else %}
+                                <td>-</td>
+                            {% endif %}
+
+                            <td><a href="{% url 'edit_pesan' list.id %}" class="btn btn-info btn-block"><span class="fas fa-edit"></span></a></td>
+                            <td><a href="{% url 'hapus_pesan' list.id%}" class="btn btn-danger btn-block"><span class="fas fa-trash-alt"></span></a></td>
+                        </tr>
+
+                        {% empty %}
+                        <tr>
+                            <td colspan="9" class="text-center">Pesan Kosong</td>
+                        </tr>
+                        
+                        {% endfor %} 
+                        </table>
+                        <br>
+                         <!-- pagination  -->
+                        <div class="pagination">
+                            <span class="step-links">
+                                {% if pesan_page_obj.has_previous %}
+                                    <a href="?page=1"> Awal</a>
+                                    <a href="?page={{ pesan_page_obj.previous_page_number }}}">&laquo; Sebelumnya</a>
+                                {% endif %}
+
+                                <span class="current">
+                                    Halaman {{ pesan_page_obj.number }} dari {{ pesan_page_obj.paginator.num_pages }}.
+                                </span>
+
+                                {% if pesan_page_obj.has_next %}
+                                    <a href="?page={{ pesan_page_obj.next_page_number }}">Selanjutnya</a>
+                                    <a href="?page={{ pesan_page_obj.paginator.num_pages }}">&raquo; Akhir</a>
+                                {% endif %}
+                            </span>
+                        </div>
+                        <!-- pagination  --> 
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <!-- /.content -->
+</div>
+<!-- /.Isi Content -->
+{% endblock content %}

@@ -1,0 +1,26 @@
+#logo{
+    width: 55px;
+}
+body{
+  background-color: #ebeff5;
+}
+#total-santri{
+  background-color: #4cb4c7;
+}
+#jumlah-wilayah{
+  background-color: #7abecc;
+}
+#jumlah-lembaga{
+  background-color: #7CD1C0;
+}
+#jumlah-putri{
+    background-color: aquamarine;
+}
+
+#jumlah-putra{
+    background-color: rgb(17, 143, 101);
+}
+
+#jumlah-khorizin{
+    background-color: rgb(43, 50, 53);
+}

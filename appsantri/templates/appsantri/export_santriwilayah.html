@@ -1,0 +1,33 @@
+{% extends 'base_userwilayah.html' %}
+{% load static %}
+{% load widget_tweaks %}
+<!-- {% load crispy_forms_tags %} -->
+
+
+{% block content %}
+<!-- Isi Content -->
+
+<div class="content-wrapper"> 
+    <br>
+    <!-- Main content -->
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-10">
+                <h5>Halaman Export</h5>
+                <hr>
+                <div class="card card-body">
+                    <!-- {% load appsantri_extras %} -->
+                    <form method='POST' action=''>{% csrf_token %}    
+                        {{form|crispy}}
+                        <input class="btn btn-info" type="submit" value='Export / Filter'/>
+                    </form>
+                </div>
+                <br>
+           
+            </div>
+        </div>
+    </div>
+    <!-- /.content -->
+</div>
+<!-- /.Isi Content -->
+{% endblock content %}

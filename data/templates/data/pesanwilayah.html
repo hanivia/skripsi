@@ -1,0 +1,54 @@
+{% extends 'base_userwilayah.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Isi Content -->
+<div class="content-wrapper">
+    <br>
+    <!-- Main content -->
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-10">
+                <h5>Halaman Pesan</h5>
+                <hr>
+                <div class="card card-body">
+                    <a class="btn btn-info btn-block" href="{% url 'form_pesanwilayah' %}">Tambah atau Kirim Pesan</a>
+                    <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+                        <tr>
+                            <th width="3px">No</th>
+                            <th width="270px">Pesan</th>
+                            <th width="40px">Status</th>
+                            <th width="220px">Balasan</th>
+                        </tr>
+                        {% for list in list %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+
+                            <td>{{ list.keterangan}}<br>Dikirim pada: {{ list.created_at|date:"d-m-Y" }}</td>
+
+                            {% if list.status == 0 %}
+                                <td>Belum Dibalas</td>
+                            {% else %}
+                                <td>{{ list.status }}</td>
+                            {% endif %}
+
+                            {% if list.pesan_balasan %}
+                                <td>{{ list.pesan_balasan}}<br> <font color="#FF8C00" size="2px"> (Pesan akan terhapus otomatis setelah 1 hari)</font></td>
+                            {% else %}
+                                <td>-</td>
+                            {% endif %}
+                        </tr>
+
+                        {% empty %}
+                        <tr>
+                            <td colspan="4" class="text-center">Pesan Kosong</td>
+                        </tr {% endfor %} </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.content -->
+</div>
+<!-- /.Isi Content -->
+{% endblock content %}

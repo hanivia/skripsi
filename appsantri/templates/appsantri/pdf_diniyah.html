@@ -1,0 +1,208 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+	<title>{{detailsantri.nama}}</title>
+    <style>
+        .tbl {
+        height : 40px;
+        }
+  </style>
+</head>
+    <body>
+        <center><font size="7"><b>DATA PRIBADI SANTRI NURUL QADIM</b></font></center>
+        <hr/>
+        <table border="0" class="tbl">
+            <tr>
+                <td width="240px"><font size="6"><b>I. DATA SANTRI</b></font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">1.  Nama Lengkap</font></td>
+                <td><font size="6">: {{detailsantri.nama}}</font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">2.  NIS</font></td>
+                {% if detailsantri.nis %}
+                    <td><font size="6">: {{detailsantri.nis}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">3.  NISN</font></td>
+                {% if detailsantri.nisn %}
+                    <td><font size="6">: {{detailsantri.nisn}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">4.  NIK</font></td>
+                {% if detailsantri.nik %}
+                    <td><font size="6">: {{detailsantri.nik}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">5.  NO KK</font></td>
+                {% if detailsantri.no_kk %}
+                    <td><font size="6">: {{detailsantri.no_kk}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">6.  Jenis Kelamin</font></td>
+                <td><font size="6">: {{detailsantri.jenis_kelamin.jenis}}</font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">7.  Tempat dan Tanggal Lahir</font></td>
+                <td><font size="6">: {{detailsantri.tempat_lahir}}, {{detailsantri.tanggal_lahir|date:"d-m-Y"}}</font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">8.  Agama</font></td>
+                <td><font size="6">: Islam</font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">9.  Anak Ke</font></td>
+                {% if detailsantri.anak_ke %}
+                    <td><font size="6">: {{detailsantri.anak_ke}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">10.  Jumlah Saudara</font></td>
+                {% if detailsantri.jumlah_saudara %}
+                    <td><font size="6">: {{detailsantri.jumlah_saudara}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">11.  Alamat Santri</font></td>
+                <td><font size="6">: {{detailsantri.alamat}} Kecamatan {{detailsantri.kecamatan}} Kabupaten {{detailsantri.kabupaten}} Propinsi {{detailsantri.propinsi}} </font></td>
+            </tr>          
+            <tr>
+                <td width="240px"><font size="6">12. Wilayah</font></td>
+                {% if detailsantri.diniyah.nama %}
+                    <td><font size="6">: {{detailsantri.diniyah.nama}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+           
+            <tr>
+                <td width="240px"><font size="6"><b>II. DATA ORANG TUA</b></font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">1. Nama Orang Tua</font></td>
+                <td><font size="6"> </font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Nama Ayah</font></td>
+                <td><font size="6">: {{detailsantri.nama_ayah}}</font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Nama Ibu</font></td>
+                <td><font size="6">: {{detailsantri.nama_ibu}}</font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">2. Pendidikan Orang Tua</font></td>
+                <td><font size="6"> </font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Ayah</font></td>
+                <td><font size="6">: {{detailsantri.pendidikan_ayah.pendidikan_ayah}}</font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Ibu</font></td>
+                <td><font size="6">: {{detailsantri.pendidikan_ibu.pendidikan_ibu}}</font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">3. Pekerjaan Orang Tua</font></td>
+                <td><font size="6"> </font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Ayah</font></td>
+                {% if detailsantri.pekerjaan_ayah %}
+                    <td><font size="6">: {{detailsantri.pekerjaan_ayah}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Ibu</font></td>
+                {% if detailsantri.pekerjaan_ibu %}
+                    <td><font size="6">: {{detailsantri.pekerjaan_ibu}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <br><br>
+            <tr>
+                <td width="240px"><font size="6">4. No. Telp/HP Orang Tua</font></td>
+                <td><font size="6"> </font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Ayah</font></td>
+                {% if detailsantri.no_hp_ayah %}
+                    <td><font size="6">: {{detailsantri.no_hp_ayah}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Ibu</font></td>
+                {% if detailsantri.no_hp_ibu %}
+                    <td><font size="6">: {{detailsantri.no_hp_ibu}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td width="240px"><font size="6"><b>III. DATA WALI</b></font></td>
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">1. Nama Wali</font></td>
+                {% if detailsantri.nama_wali %}
+                    <td><font size="6">: {{detailsantri.nama_wali}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">2. Pendidikan Wali</font></td>
+                {% if detailsantri.pendidikan_wali %}
+                    <td><font size="6">: {{detailsantri.pendidikan_wali.pendidikan_wali}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">3. Pekerjaan Wali</font></td>
+                {% if detailsantri.pekerjaan_wali %}
+                    <td><font size="6">: {{detailsantri.pekerjaan_wali}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td width="240px"><font size="6">4. No Telp/Hp Wali</font></td>
+                {% if detailsantri.no_hp_wali %}
+                    <td><font size="6">: {{detailsantri.no_hp_wali}}</font></td>
+                {% else %}
+                    <td><font size="6">: -</font></td>
+                {% endif %}
+            </tr>
+
+        </table>
+        
+        <table border="0">
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ detailsantri.foto.path}}" height="260px" align="right"></td>
+                
+            </tr>
+        </table>
+    </body>
+</html>

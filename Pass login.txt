@@ -1,0 +1,86 @@
+--------Admin-------------
+1. username: qadim
+   password: 908ya512
+
+--------Lembaga-------------
+1. Nama Lembaga: PAUD Nurul Qadim
+   email: paud@gmail.com
+   username: paudnq
+   password: . 17paud77  -- 12paudnq  
+
+2. Nama Lembaga: TK Nurul Hasan
+   email: tknurulhasan@gmail.com
+   username: tknurulhasan
+   password: 0900tknh
+
+3. Nama Lembaga: MI Nurul Qadim
+   email: minurulqadim@gmail.com
+   username: minurulqadim
+   password: minq3434
+
+4. Nama Lembaga: MTS Nurul Qadim
+   email: mtsnurulqadim@gmail.com
+   username: mtsnq
+   password: 1232mtsnq
+
+5. Nama Lembaga: MA Nurul Qadim
+   email: manurulqadim@gmail.com
+   username: manq
+   password: 4549manq
+
+--------Diniyah-------------
+1. Nama Diniyah: TPQ An-Nuriyah
+   email: tpqannuriyah@gmail.com
+   username: tpqannuriyah
+   password: tpq13111
+
+2. Nama Diniyah: Madrasah I'dadiyah Nurul Qadim
+   email: madrasahinq@gmail.com
+   username: madrasahnq
+   password: 11madrasahnq - .13344madrasah - 12mad34sah
+
+3. Nama Diniyah: PDF Nurul Qadim Tingkat Wustha
+   email: pdfnqwustha@gmail.com
+   username: pdfnqwustha
+   password: 12pdfnqwustha
+
+4. Nama Diniyah: PDF Nurul Qadim Tingkat Ula
+   email: pdfnqula@gmail.com
+   username: pdfnqula
+   password: pdfnqula11
+
+5. Nama Diniyah: Ma'had Aly
+   email: mahadaly@gmail.com
+   username: mahadaly
+   password: 11mahadaly
+
+
+--------Wilayah-------------
+1. Nama Wilayah: Pondok Putra
+   email: pondokputra@gmail.com
+   username: pondokputra
+   password: . 55pondut11 - 12ponput345
+
+2. Nama Wilayah: Banat 1
+   email: banat1@gmail.com
+   username: banat1
+   password: 8998banat1
+
+3. Nama Wilayah: Banat 2
+   email: banat2@gmail.com
+   username: banat2
+   password: banat20101
+
+4. Nama Wilayah: Pondok Anak anak
+   email: pondokanaka@gmail.com
+   username:pondokanakanak
+   password: pondokanakaa
+
+5. Nama Wilayah: Khadim
+   email: khadim@gmail.com
+   username:khadim
+   password:34khadim1
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+
+      

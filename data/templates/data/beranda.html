@@ -1,0 +1,125 @@
+{% extends 'base_santri.html' %}
+{% load static %}
+
+{% block content %}
+ <!-- Isi Content -->
+ <div class="content-wrapper">
+    <br><br>
+    <!-- message -->
+    <div>
+        {% if messages %}
+
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            {{ message | safe }}
+        </div>
+        {% endfor %}
+
+        {% endif %}
+    </div>
+    <!-- message -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-4 col-8">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>{{ total_data_santri }}</h3>
+
+                            <p>Total Santri</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-4 col-8">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>{{ total_data_santri_putra }}</h3>
+
+                            <p>Jumlah Santri Putra</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-4 col-8">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>{{ total_data_santri_putri }}</h3>
+                            <p>Jumlah Santri Putri</p>
+                        </div>
+                        <div class="icon">
+                            <i class="far fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-4 col-8">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>{{ total_data_wilayah }}</h3>
+                            <p>Jumlah Wilayah</p>
+                        </div>
+                        <div class="icon">
+                            <!-- <i class="ion ion-person-add"></i> -->
+                            <i class="fas fa-th"></i>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-4 col-8">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>{{ total_data_lembaga }}</h3>
+                            <p>Jumlah Lembaga</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-4 col-8">
+                    <!-- small box -->
+                    <div class="small-box bg-secondary">
+                        <div class="inner">
+                            <h3>{{ total_data_diniyah }}</h3>
+                            <p>Jumlah Diniyah</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-mosque"></i>
+                            <!-- <ion-icon name="apps-outline"></ion-icon> -->
+                        </div>
+                        
+                        <!-- <div class="icon">
+                            <i class="ion ion-apps-outline"></i>
+                        </div> -->
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- /.row -->
+
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.Isi Content -->
+{% endblock content %}

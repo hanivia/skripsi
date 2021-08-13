@@ -1,0 +1,59 @@
+{% extends 'base_santri.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<!-- Isi Content -->
+<div class="content-wrapper">
+    <br>
+    <!-- Main content -->
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <div class="card card-body">
+                    {% if messages%}
+                    {% for message in messages%}
+
+                    <div class="alert alert-{{message.tags}}">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+                    <form action="{% url 'form_wilayah'  %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="nama">Nama Wilayah</label>
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{data.nama}}"
+                                placeholder="Masukan Nama Wilayah">
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username"
+                                value="{{data.username}}" placeholder="Masukan Username">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Password</label>
+                            <input type="password" class="form-control" id="pass" name="pass" value="{{data.password}}"
+                                placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass2">Ulangi Password</label>
+                            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Password">
+                        </div>
+
+
+
+                        <input type="submit" class="btn btn-info" value="Simpan" />
+                        <a class="btn btn-secondary" href="{% url 'wilayah' %}" role="button">Kembali</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.content -->
+</div>
+<!-- /.Isi Content -->
+{% endblock content %}
